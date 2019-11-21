@@ -1,3 +1,52 @@
 body {
-    color: blue;
+    background-image: url("../images/dc3b7e90524215d06cdff73adfdf6995.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100% 100%;
+    text-align: center;
+    font-size: 10px;
+    color: blanchedalmond;
+}
+
+.buttons {
+    position: relative;
+    background-color: rgb(149, 97, 199);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin: 8px;
+    width: 80px;
+    font-size: x-large;
+    font-family: cursive;
+    text-decoration: none;
+    color: floralwhite;
+    opacity: 0.6;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+ .buttons:hover {
+    opacity: 1;
+    padding: 18px 23px;
+}
+
+#reset {
+    background-color: brown;
+    border-radius: 12px;
+    padding: 15px 25px;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+}
+
+#reset:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+#display {
+    position: absolute;
+    top: 50%;
+    
 }
