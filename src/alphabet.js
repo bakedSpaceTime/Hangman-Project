@@ -15,6 +15,7 @@ function createLetterButton(dec){
 
     node.style.margin = '5px'
     node.style.width = '30px'
+    node.className = 'buttons'
     node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
 
     node.appendChild(document.createTextNode(decToAlpha(dec)))
