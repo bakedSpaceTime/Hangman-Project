@@ -19,17 +19,22 @@
 </head>
 <body>
     <!-- <p>ddddd</p> -->
+    <br>
+    <canvas id="guessedLetters"></canvas>
     <div id="buttonDiv"></div>
     <input id="reset" type="button" onclick="resetGame()" value="Reset Game">
     
     <script src="src/gamescript.js"></script>
     <script src="src/alphabet.js"></script>
+    <script src="src/display.js"></script>
     <script>
 
         let words = ['BOOB', 'BUTT', 'BUM', 'TIT', 'TITTIES'];
-        alphabetButtons(26)
+        let word = '';
+        alphabetButtons(26);
         playGame();
-        
+        // calculateStartWidth()
+        // displayBlankLines();
        
     </script>
     

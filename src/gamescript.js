@@ -11,9 +11,8 @@ function playGame(){
 
     console.log(word.includes('i'))
 
-    
-
-
+    drawBottomLine()
+    displayBlankLines()
 }
 
 function randomWord() {
@@ -29,6 +28,7 @@ function addLetterToGuess(letter){
         // console.log(word[i])
         if(letter == word[i]){
             userGuessList[i] = letter;
+            displayLetter(letter, i)
         }
     }
 
@@ -36,7 +36,7 @@ function addLetterToGuess(letter){
     
     if(checkGuess()){
         console.log('YOU WON')
-        resetGame();
+        setTimeout(resetGame, 2000)
     }
 
 
@@ -51,6 +51,8 @@ function checkGuess(){
 
 function resetGame(){
     // clearButtons();
-    playGame();
-    
+    console.log('reset')
+    clearDisplay()
+    setTimeout(playGame, 1000)
+    // playGame();
 }
