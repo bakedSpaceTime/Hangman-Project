@@ -20,12 +20,8 @@ function randomWord() {
 }
 
 function addLetterToGuess(letter){
-    // userGuess += letter
-    // console.log(userGuess)
-
     
     for(let i = 0; i < word.length; i++){
-        // console.log(word[i])
         if(letter == word[i]){
             userGuessList[i] = letter;
             displayLetter(letter, i)
@@ -38,11 +34,6 @@ function addLetterToGuess(letter){
         console.log('YOU WON')
         setTimeout(resetGame, 2000)
     }
-
-
-
-
-
 }
 
 function checkGuess(){
@@ -50,9 +41,7 @@ function checkGuess(){
 }
 
 function resetGame(){
-    // clearButtons();
     console.log('reset')
     clearDisplay()
     setTimeout(playGame, 1000)
-    // playGame();
 }
