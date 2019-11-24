@@ -20,7 +20,7 @@
 <body>
     <!-- <p>ddddd</p> -->
     <br>
-    <canvas id="guessedLetters"></canvas>
+    <canvas id="guessedLetters"></canvas><br><br><br><br>
     <div id="buttonDiv"></div>
     <input id="reset" type="button" onclick="resetGame()" value="Reset Game">
     
@@ -29,7 +29,26 @@
     <script src="src/display.js"></script>
     <script>
 
-        let words = ['BOOB', 'BUTT', 'BUM', 'TIT', 'TITTIES'];
+        let words = [['intend', 'have in mind as a purpose'],
+                     ['concern', 'something that interests you it is important'], 
+                     ['policy', 'a plan of action adopted by an individual or social group'],
+                     ['gardyloo','a warning shouted before throwing water from above']
+                     ['somnambulist', 'a person who sleepwalks']
+                     ['bitcoin', 'an online payment system that does not require an intermediary']
+                     ['constant', 'a quantity that does not vary']
+                     ['appeal', 'be attractive to']
+                     ['league', 'an association of sports teams that organize matches']
+                     ['dwell', 'think moodily or anziety about something']
+                     ['financial', 'involving fiscal matters']
+                     ['territory', 'the geographical area under the jurisdiction of a state']
+                     ['humble', 'not arrogant or prideful']
+                     ['attitude', 'a complex mental state involving beliefs and feelings']
+                     ['resource', 'a new or reserve supply that can be drawn upon when neede']
+                     ['attribute', 'a quality belonging to or characteristics of an entity']
+                     ['committee', 'a group of people appointed for a specific function']
+                     ['sanction', 'give authority or permition to']
+                     ['extravagant', 'recklessly wasteful']
+                     ['humiliate', 'cause to feel shame']];
         let word = '';
         alphabetButtons(26);
         playGame();
