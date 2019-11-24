@@ -16,7 +16,7 @@ function playGame(){
 }
 
 function randomWord() {
-    return words[Math.floor(Math.random()*words.length)]
+    return words[Math.floor(Math.random()*words.length)][0]
 }
 
 function addLetterToGuess(letter){
