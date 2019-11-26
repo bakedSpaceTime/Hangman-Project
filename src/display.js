@@ -5,13 +5,17 @@ let height = window.innerHeight * 0.2;
 
 let ctx = canv.getContext('2d')
 
-canv.width = width;
-canv.height = height;
+initializeDisplay()
 
-canv.style.border = '2px solid blue '
-ctx.font = '35px consolas'
-ctx.fillStyle = 'red'
-ctx.fillRect(0,0,width,height)
+function initializeDisplay() {
+    canv.width = width;
+    canv.height = height;
+    
+    canv.style.border = '2px solid blue '
+    ctx.font = '35px consolas'
+    ctx.fillStyle = 'red'
+    ctx.fillRect(0,0,width,height)
+}
 
 
 function drawBottomLine(){
@@ -61,4 +65,28 @@ function clearDisplay(){
     ctx.fillRect(0,0,width,height)
 
     console.log(width)
+}
+
+// Trying to resize the canvas element onresize of body doesnt work yet please help Tushya idk how the canvas is generated
+function resize_canvas(){
+    canv = document.getElementById("guessedLetters");
+    if (canv.width  < width)
+    {   
+        canv.width  = width;
+        clearDisplay();
+        initializeDisplay();
+        drawBottomLine();
+        displayBlankLines();
+        console.log('yes')
+    }
+
+    if (canv.height < height)
+    {
+        canv.height = height;
+        clearDisplay();
+        initializeDisplay();
+        drawBottomLine();
+        displayBlankLines();
+        console.log('yes')
+    }
 }
