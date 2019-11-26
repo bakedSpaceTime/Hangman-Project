@@ -5,7 +5,7 @@ let height = window.innerHeight * 0.2;
 
 let ctx = canv.getContext('2d')
 
-initializeDisplay()
+// initializeDisplay()
 
 function initializeDisplay() {
     canv.width = width;
@@ -15,6 +15,9 @@ function initializeDisplay() {
     ctx.font = '35px consolas'
     ctx.fillStyle = 'red'
     ctx.fillRect(0,0,width,height)
+
+    drawBottomLine();
+    displayBlankLines();
 }
 
 
@@ -75,8 +78,8 @@ function resize_canvas(){
         width = window.innerWidth * 0.8;
         clearDisplay();
         initializeDisplay();
-        drawBottomLine();
-        displayBlankLines();
+        // drawBottomLine();
+        // displayBlankLines();
         console.log('yes')
     }
 
@@ -85,8 +88,8 @@ function resize_canvas(){
         height = window.innerHeight * 0.2;
         clearDisplay();
         initializeDisplay();
-        drawBottomLine();
-        displayBlankLines();
+        // drawBottomLine();
+        // displayBlankLines();
         console.log('yes')
     }
 }
