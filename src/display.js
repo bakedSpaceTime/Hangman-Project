@@ -69,10 +69,10 @@ function clearDisplay(){
 
 // Trying to resize the canvas element onresize of body doesnt work yet please help Tushya idk how the canvas is generated
 function resize_canvas(){
-    canv = document.getElementById("guessedLetters");
-    if (canv.width  < width)
+
+    if (canv.width < window.innerWidth)
     {   
-        canv.width  = width;
+        width = window.innerWidth * 0.8;
         clearDisplay();
         initializeDisplay();
         drawBottomLine();
@@ -80,9 +80,9 @@ function resize_canvas(){
         console.log('yes')
     }
 
-    if (canv.height < height)
+    if (canv.height < window.innerHeight)
     {
-        canv.height = height;
+        height = window.innerHeight * 0.2;
         clearDisplay();
         initializeDisplay();
         drawBottomLine();
