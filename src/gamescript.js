@@ -1,7 +1,7 @@
+let userGuess = '';
+let userGuessList = [];
 
 function playGame(){
-    userGuess = '';
-    userGuessList = [];
 
     // alphabetButtons(26);
 
@@ -42,6 +42,8 @@ function checkGuess(){
 }
 
 function resetGame(){
+    userGuess = '';
+    userGuessList = [];
     console.log('reset')
     clearDisplay()
     setTimeout(playGame, 1000)
