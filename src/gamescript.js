@@ -11,8 +11,9 @@ function playGame(){
 
     console.log(word.includes('i'))
 
-    drawBottomLine()
-    displayBlankLines()
+    // drawBottomLine()
+    // displayBlankLines()
+    initializeDisplay()
 }
 
 function randomWord() {
