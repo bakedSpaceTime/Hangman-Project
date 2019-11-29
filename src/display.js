@@ -13,7 +13,7 @@ function initializeDisplay() {
     
     canv.style.border = '2px solid blue '
     ctx.font = '35px consolas'
-    ctx.fillStyle = 'red'
+    ctx.fillStyle = 'yellow'
     ctx.fillRect(0,0,width,height)
 
     drawBottomLine();
@@ -58,12 +58,11 @@ function displayBlankLines(){
 function displayLetter(letter, i){
     let w = calculateStartWidth()
     ctx.fillStyle = 'blue'
-    
     ctx.fillText(letter, w + width * 0.04 * i, height * 0.55)
 }
 
 function clearDisplay(){
-    ctx.fillStyle = 'red'
+    ctx.fillStyle = 'yellow'
     ctx.clearRect(0, 0, width, height)
     ctx.fillRect(0,0,width,height)
 
