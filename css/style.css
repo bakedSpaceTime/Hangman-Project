@@ -37,6 +37,11 @@ body {
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 12px;
+    
+}
+
+#buttonDiv {
+    margin: 9vh 9vw;
 }
 
 #reset:hover {
@@ -48,4 +53,12 @@ body {
     position: absolute;
     top: 50%;
     
+}
+
+#clicked_button {
+    visibility: hidden;
+}
+
+#reset_button {
+    visibility: visible;
 }
