@@ -21,6 +21,9 @@ function createLetterButton(dec){
     node.appendChild(document.createTextNode(decToAlpha(dec)))
 
     document.getElementById('buttonDiv').appendChild(node)
+    node.onclick = function clicked_button() {
+        node.id = 'clicked_button'
+    }
 }
 
 function decToAlpha(code){
@@ -29,6 +32,7 @@ function decToAlpha(code){
 
 function buttClick(name){
     console.log('Button ' + name + ' was clicked');
+
 }
 
 function clearButtons(){
