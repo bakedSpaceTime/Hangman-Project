@@ -45,6 +45,7 @@ function resetGame(){
     userGuess = '';
     userGuessList = [];
     console.log('reset')
+    document.getElementById('clicked_button').style.visibility = 'visible'
     clearDisplay()
     setTimeout(playGame, 50)
     
