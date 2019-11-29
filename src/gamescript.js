@@ -46,7 +46,6 @@ function resetGame(){
     userGuessList = [];
     console.log('reset')
     clearDisplay()
-    document.getElementById('buttonDiv').id = 'reset_button'
     setTimeout(playGame, 50)
     
 }
