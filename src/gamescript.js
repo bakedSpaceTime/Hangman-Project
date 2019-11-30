@@ -36,6 +36,7 @@ function addLetterToGuess(letter){
     
     if(checkGuess()){
         console.log('YOU WON')
+        document.getElementById('hint').innerHTML = 'Nice job!';
         setTimeout(resetGame, 2000)
     }
 }
