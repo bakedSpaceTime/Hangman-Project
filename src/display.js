@@ -8,6 +8,9 @@ let ctx = canv.getContext('2d')
 // initializeDisplay()
 
 function initializeDisplay() {
+    document.getElementById('score').innerHTML = 'Score: ' + score;     // Initalizes lives 
+    document.getElementById('lives').innerHTML = 'Lives: ' + lives;     // and score
+
     canv.width = width;
     canv.height = height;
     
@@ -69,6 +72,37 @@ function clearDisplay(){
     console.log(width)
 }
 
+
+function displayHint(word) {
+    let hint;
+    for (let i = 0; i < words.length; i++) {
+        if (words[i][0] == word) {
+            hint = words[i][1];
+        }
+    }
+    document.getElementById('hint').innerHTML = 'Hint: ' + hint;
+    console.log('Hint:', hint);
+}
+
+
+function changeScore(guess) {
+    let scoreTag = document.getElementById('score');
+    let livesTag = document.getElementById('lives');
+    
+    if (guess) {
+        score += 1;
+        scoreTag.innerHTML = 'Score: ' + score;
+    } else {
+        score -= 1;
+        lives -= 1;
+        scoreTag.innerHTML = 'Score: ' + score;
+        livesTag.innerHTML = 'Lives: ' + lives;
+        if (lives == 0) {
+            gameOver()
+        }
+    }
+}
+
 // Trying to resize the canvas element onresize of body doesnt work yet please help Tushya idk how the canvas is generated
 function resize_canvas(){
 
@@ -79,7 +113,7 @@ function resize_canvas(){
         initializeDisplay();
         // drawBottomLine();
         // displayBlankLines();
-        console.log('yes')
+        console.log('Window resized')
     }
 
     if (canv.height < window.innerHeight)
@@ -89,6 +123,6 @@ function resize_canvas(){
         initializeDisplay();
         // drawBottomLine();
         // displayBlankLines();
-        console.log('yes')
+        console.log('Window resized')
     }
 }

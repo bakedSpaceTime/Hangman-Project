@@ -20,7 +20,10 @@
 <body onresize = 'resize_canvas()'>
     <!-- <p>ddddd</p> -->
     <br>
-    <canvas id="guessedLetters"></canvas><br><br><br><br>
+    <canvas id="guessedLetters"></canvas><br><br>
+    <h2 id="hint"></h2>
+    <h4 id='lives'></h4>
+    <h4 id='score'></h4>
     <div id="buttonDiv"></div>
     <input id="reset" type="button" onclick="resetGame()" value="Reset Game">
     
@@ -40,6 +43,8 @@
                     ['ATTRIBUTE', 'a quality belonging to or characteristics of an entity'],
                     ['COMMITTEE', 'a group of people appointed for a specific function']];
         let word = '';
+        let score = 0
+        let lives = 7
         alphabetButtons(26);
         playGame();
         // calculateStartWidth()
