@@ -46,8 +46,6 @@ function checkGuess(){
 }
 
 function resetGame(){
-    score = 0
-    lives = 7
     userGuess = '';
     userGuessList = [];
     console.log('reset')
@@ -66,6 +64,9 @@ function resetGame(){
 
 
 function gameOver() {
+    score = 0
+    lives = 7
+    
     document.getElementById('buttonDiv').style.display = 'None';
     document.getElementById('score').style.display = 'None';
     document.getElementById('lives').style.display = 'None';
