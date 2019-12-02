@@ -11,27 +11,7 @@ function initializeDisplay() {
     document.getElementById('score').innerHTML = 'Score: ' + score;     // Initalizes lives 
     document.getElementById('lives').innerHTML = 'Lives: ' + lives;     // and score
 
-    canv.width = width;
-    canv.height = height;
-    
-    canv.style.border = '2px solid blue '
-    ctx.font = '35px consolas'
-    ctx.fillStyle = 'yellow'
-    ctx.fillRect(0,0,width,height)
-
-    drawBottomLine();
     displayBlankLines();
-}
-
-
-function drawBottomLine(){
-
-    ctx.lineWidth = 5
-    ctx.strokeStyle = 'blue'
-    ctx.beginPath()
-    ctx.moveTo(width * 0.9, height * 0.7)
-    ctx.lineTo(width * 0.1, height * 0.7)
-    ctx.stroke()
 }
 
 function calculateStartWidth(){
@@ -39,37 +19,39 @@ function calculateStartWidth(){
 }
 
 function displayBlankLines(){
-
-    let w = calculateStartWidth()
-       
-    ctx.lineWidth = 5
-    
-    ctx.strokeStyle = 'blue'
-
+    let out = ''
     for(let i = 0; i < word.length; i++){
-
-        console.log(word.length)
-
-        ctx.beginPath()
-        ctx.moveTo(w + i * width * 0.04, height * 0.6)
-        ctx.lineTo(w + i * width * 0.04 + ctx.measureText(word[i]).width , height * 0.6)
-        ctx.stroke()
-        
+        out += '_ '
     }
+
+    disp.innerText = out;
 }
 
 function displayLetter(letter, i){
-    let w = calculateStartWidth()
-    ctx.fillStyle = 'blue'
-    ctx.fillText(letter, w + width * 0.04 * i, height * 0.55)
+    let txt = disp.innerText;
+    console.log(txt)
+
+    let out1 = ''
+    let k;
+    let c;
+    
+    for(let j = 0; j < txt.length; j+=2){
+
+        k = j/2
+        if(letter == word[k] && i == k){
+            c = (letter + ' ');
+        }
+        else if (j % 2 == 0){
+            c = txt[j];
+        }
+        out1 += c + ' '
+    }
+    
+    disp.innerText = out1;
 }
 
 function clearDisplay(){
-    ctx.fillStyle = 'yellow'
-    ctx.clearRect(0, 0, width, height)
-    ctx.fillRect(0,0,width,height)
-
-    console.log(width)
+    disp.innerHTML = '';
 }
 
 
@@ -103,26 +85,3 @@ function changeScore(guess) {
     }
 }
 
-// Trying to resize the canvas element onresize of body doesnt work yet please help Tushya idk how the canvas is generated
-function resize_canvas(){
-
-    if (canv.width < window.innerWidth)
-    {   
-        width = window.innerWidth * 0.8;
-        clearDisplay();
-        initializeDisplay();
-        // drawBottomLine();
-        // displayBlankLines();
-        console.log('Window resized')
-    }
-
-    if (canv.height < window.innerHeight)
-    {
-        height = window.innerHeight * 0.2;
-        clearDisplay();
-        initializeDisplay();
-        // drawBottomLine();
-        // displayBlankLines();
-        console.log('Window resized')
-    }
-}

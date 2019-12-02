@@ -13,7 +13,7 @@ function playGame(){
     console.log(word.includes('i'))
 
     // drawBottomLine()
-    // displayBlankLines()
+    displayBlankLines()
     initializeDisplay()
 }
 
