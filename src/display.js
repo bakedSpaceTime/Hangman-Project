@@ -1,9 +1,5 @@
 let disp = document.getElementById('correctLetters');
 
-let ctx = canv.getContext('2d')
-
-// initializeDisplay()
-
 function initializeDisplay() {
     document.getElementById('score').innerHTML = 'Score: ' + score;     // Initalizes lives 
     document.getElementById('lives').innerHTML = 'Lives: ' + lives;     // and score
