@@ -44,7 +44,7 @@ function displayLetter(letter, i){
 }
 
 function clearDisplay(){
-    disp.innerHTML = '';
+    disp.innerHTML = '&nbsp;';
 }
 
 
