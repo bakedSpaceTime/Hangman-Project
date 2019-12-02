@@ -76,7 +76,7 @@ function gameOver() {
     //document.getElementById('reset').style.display = 'None';
     //canv.clearRect(0, 0, canvas.width, canvas.height);
 
-    let name = prompt('Please enter your name.');
+    let name = prompt('Please enter your name.', 'Random Player');
 
     document.getElementById('hint').innerHTML= "Game over, " + name + "! You lost!";
 }
