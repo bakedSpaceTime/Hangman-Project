@@ -62,3 +62,7 @@ body {
 #reset_button {
     visibility: visible;
 }
+
+#correctLetters {
+    font-size: 10vw;
+}
