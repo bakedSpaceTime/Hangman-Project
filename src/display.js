@@ -4,7 +4,7 @@ function initializeDisplay() {
     document.getElementById('score').innerHTML = 'Score: ' + score;     // Initalizes lives 
     document.getElementById('lives').innerHTML = 'Lives: ' + lives;     // and score
 
-    displayBlankLines();
+    displayBlankLines()
 }
 
 function calculateStartWidth(){

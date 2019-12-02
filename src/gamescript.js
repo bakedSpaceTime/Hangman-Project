@@ -13,7 +13,6 @@ function playGame(){
     console.log(word.includes('i'))
 
     // drawBottomLine()
-    displayBlankLines()
     initializeDisplay()
 }
 
@@ -22,7 +21,7 @@ function randomWord() {
 }
 
 function addLetterToGuess(letter){
-    let currentGuess;
+    let currentGuess = false;
     for(let i = 0; i < word.length; i++){
         if(letter == word[i]){
             currentGuess = true
@@ -37,7 +36,7 @@ function addLetterToGuess(letter){
     if(checkGuess()){
         console.log('YOU WON')
         document.getElementById('hint').innerHTML = 'Nice job!';
-        setTimeout(resetGame, 2000)
+        setTimeout(continueGame, 2000)
     }
 }
 
@@ -64,6 +63,22 @@ function resetGame(){
     
 }
 
+function continueGame(){
+    userGuess = '';
+    userGuessList = [];
+    console.log('reset')
+
+    //document.getElementById('clicked_button').style.visibility = 'visible'
+    clearButtons()
+    alphabetButtons(26)
+    document.getElementById('buttonDiv').style.display = '';
+    document.getElementById('score').style.display = '';
+    document.getElementById('lives').style.display = '';
+
+    clearDisplay()
+    setTimeout(playGame, 50)
+    
+}
 
 function gameOver() {
     score = 0
