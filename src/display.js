@@ -1,7 +1,4 @@
-let canv = document.getElementById('guessedLetters');
-
-let width = window.innerWidth * 0.8;
-let height = window.innerHeight * 0.2;
+let disp = document.getElementById('correctLetters');
 
 let ctx = canv.getContext('2d')
 
