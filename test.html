@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+</head>
+<body>
+
+  
+        
+    <!-- <form>
+        <p>
+
+            <input id ='CorrectLetters' type="text" Disabled value="ss">
+        </p>
+    </form> -->
+
+
+    <h1 id="correctLetters"></h1>
+
+    <script>
+        let word = 'JUMJAM'
+        let disp = document.getElementById('correctLetters');
+        
+        displayBlankLines()
+
+        setTimeout( function() {
+            for(let i = 0; i <word.length; i++){
+                console.log("before")
+                displayLetter(word[i], i)
+                console.log("after")
+            }
+            
+        }, 1000);
+
+
+        function displayBlankLines(){
+            let out = ''
+            for(let i = 0; i < word.length; i++){
+                out += '_ '
+            }
+
+            disp.innerText = out;
+        }
+
+        function displayLetter(letter, i){
+
+            let txt = disp.innerText;
+            console.log(txt)
+
+            let out1 = ''
+            let k;
+            let c;
+            
+            for(let j = 0; j < txt.length; j+=2){
+
+                k = j/2
+                if(letter == word[k] && i == k){
+                    c = (letter + ' ');
+                }
+                else if (j % 2 == 0){
+                    c = txt[j];
+                }
+                out1 += c + ' '
+            }
+            
+            disp.innerText = out1;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -4,46 +4,45 @@ function initializeDisplay() {
     document.getElementById('score').innerHTML = 'Score: ' + score;     // Initalizes lives 
     document.getElementById('lives').innerHTML = 'Lives: ' + lives;     // and score
 
-    displayBlankLines()
+    displayBlankLines();
 }
 
-function calculateStartWidth(){
-    return width * (0.5 - word.length / 2 * 0.035)
+function calculateStartWidth() {
+    return width * (0.5 - word.length / 2 * 0.035);
 }
 
-function displayBlankLines(){
+function displayBlankLines() {
     let out = ''
-    for(let i = 0; i < word.length; i++){
-        out += '_ '
+    for (let i = 0; i < word.length; i++) {
+        out += '_ ';
     }
 
     disp.innerText = out;
 }
 
-function displayLetter(letter, i){
+function displayLetter(letter, i) {
     let txt = disp.innerText;
-    console.log(txt)
 
     let out1 = ''
     let k;
     let c;
-    
-    for(let j = 0; j < txt.length; j+=2){
 
-        k = j/2
-        if(letter == word[k] && i == k){
+    for (let j = 0; j < txt.length; j += 2) {
+
+        k = j / 2;
+        if (letter == word[k] && i == k) {
             c = (letter + ' ');
         }
-        else if (j % 2 == 0){
+        else if (j % 2 == 0) {
             c = txt[j];
         }
-        out1 += c + ' '
+        out1 += c + ' ';
     }
-    
+
     disp.innerText = out1;
 }
 
-function clearDisplay(){
+function clearDisplay() {
     disp.innerHTML = '&nbsp;';
 }
 
@@ -56,14 +55,13 @@ function displayHint(word) {
         }
     }
     document.getElementById('hint').innerHTML = 'Hint: ' + hint;
-    console.log('Hint:', hint);
 }
 
 
 function changeScore(guess) {
     let scoreTag = document.getElementById('score');
     let livesTag = document.getElementById('lives');
-    
+
     if (guess) {
         score += 1;
         scoreTag.innerHTML = 'Score: ' + score;
@@ -73,7 +71,7 @@ function changeScore(guess) {
         scoreTag.innerHTML = 'Score: ' + score;
         livesTag.innerHTML = 'Lives: ' + lives;
         if (lives == 0) {
-            gameOver()
+            gameOver();
         }
     }
 }
