@@ -30,7 +30,7 @@ function createLetterButton(dec){
         this.id = 'clicked_button'       
     }
     
-    this.node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
+    this.node.addEventListener('click', function(){addLetterToGuess(this)})
     this.node.addEventListener('click', this.changeID)
     this.addToBody();
 
