@@ -70,14 +70,14 @@ function continueGame() {
 }
 
 function gameOver() {
-    score = 0;
-    lives = 7;
-
     document.getElementById('buttonDiv').style.display = 'None';
     document.getElementById('score').style.display = 'None';
     document.getElementById('lives').style.display = 'None';
-
+    
     let name = prompt('Please enter your name.', 'Random Player');
+    
+    document.getElementById('hint').innerHTML = "Game over, " + name + "! You lost!<br>Your final score is: " + score;
 
-    document.getElementById('hint').innerHTML = "Game over, " + name + "! You lost!";
+    score = 0;
+    lives = 7;
 }
