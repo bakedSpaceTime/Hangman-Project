@@ -2,26 +2,37 @@
 
 function alphabetButtons(n){
 
-    let i = 0
+    let btnArr = [];
+
+    let i = 0;
     while(i < n){
-        createLetterButton(i);
-        i ++
+        btnArr.push(new createLetterButton(i));
+        i ++;
     }    
+
+    return btnArr;
 }
 
 function createLetterButton(dec){
-    
-    let node = document.createElement('button');
+    this.node = document.createElement('button');
 
-    node.style.margin = '5px'
-    node.style.width = '30px'
-    node.className = 'buttons'
-    node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
-    node.addEventListener('click', function(){node.id = 'clicked_button'})
+    this.node.style.margin = '5px'
+    this.node.style.width = '30px'
+    this.node.className = 'buttons'
+    this. node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
+    this.node.addEventListener('click', function(){node.id = 'clicked_button'})
 
-    node.appendChild(document.createTextNode(decToAlpha(dec)))
+    this.node.appendChild(document.createTextNode(decToAlpha(dec)))
 
-    document.getElementById('buttonDiv').appendChild(node)
+    // this.addToBody();
+
+    this.addToBody = function(){
+
+        document.getElementById('buttonDiv').appendChild(this.node)
+    }
+
+    this.addToBody();
+
     // node.onclick = function clicked_button() {
     //     node.id = 'clicked_button'
     // }
