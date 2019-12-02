@@ -8,7 +8,7 @@ function alphabetButtons(n){
         i ++
     }    
 }
-
+    //clickable button to enter
 function createLetterButton(dec){
     
     let node = document.createElement('button');
@@ -30,7 +30,7 @@ function createLetterButton(dec){
 function decToAlpha(code){
     return String.fromCharCode(code + 65);
 }
-
+    //clicked the button to use it
 function buttClick(name){
     console.log('Button ' + name + ' was clicked');
 

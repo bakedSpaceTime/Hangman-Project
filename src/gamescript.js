@@ -16,11 +16,11 @@ function playGame(){
     // displayBlankLines()
     initializeDisplay()
 }
-
+    //random word from the list that will be chosen for the user to guess
 function randomWord() {
     return words[Math.floor(Math.random()*words.length)][0]
 }
-
+    //adds new letter to the guess 
 function addLetterToGuess(letter){
     let currentGuess;
     for(let i = 0; i < word.length; i++){
@@ -40,11 +40,11 @@ function addLetterToGuess(letter){
         setTimeout(resetGame, 2000)
     }
 }
-
+    
 function checkGuess(){
     return userGuessList.join('') == word;
 }
-
+    //this resets the game for the player to play again
 function resetGame(){
     score = 0
     lives = 7
@@ -64,7 +64,7 @@ function resetGame(){
     
 }
 
-
+    //game ends and a new game will begin with reset scores and lives
 function gameOver() {
     score = 0
     lives = 7

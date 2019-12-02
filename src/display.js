@@ -37,7 +37,7 @@ function drawBottomLine(){
 function calculateStartWidth(){
     return width * (0.5 - word.length / 2 * 0.035)
 }
-
+    // will display blank spots inplace of the actual word to be guessed
 function displayBlankLines(){
 
     let w = calculateStartWidth()
@@ -72,7 +72,8 @@ function clearDisplay(){
     console.log(width)
 }
 
-
+    //will showcase a hint related to the word to help the user
+    //guess the word
 function displayHint(word) {
     let hint;
     for (let i = 0; i < words.length; i++) {
@@ -84,7 +85,9 @@ function displayHint(word) {
     console.log('Hint:', hint);
 }
 
-
+    //this will up the score when the user has guessed right
+    //or will lower the score by 1 if he guessed wrong
+    //if the score goes down so will one live for each mistake
 function changeScore(guess) {
     let scoreTag = document.getElementById('score');
     let livesTag = document.getElementById('lives');
