@@ -17,13 +17,14 @@ function createLetterButton(dec){
     node.style.width = '30px'
     node.className = 'buttons'
     node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
+    node.addEventListener('click', function(){node.id = 'clicked_button'})
 
     node.appendChild(document.createTextNode(decToAlpha(dec)))
 
     document.getElementById('buttonDiv').appendChild(node)
-    node.onclick = function clicked_button() {
-        node.id = 'clicked_button'
-    }
+    // node.onclick = function clicked_button() {
+    //     node.id = 'clicked_button'
+    // }
 }
 
 function decToAlpha(code){
