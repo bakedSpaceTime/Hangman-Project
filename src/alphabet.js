@@ -1,5 +1,3 @@
-
-
 function alphabetButtons(n) {
 
     let btnArr = [];
