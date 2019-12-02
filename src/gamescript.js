@@ -20,7 +20,8 @@ function randomWord() {
     return words[Math.floor(Math.random()*words.length)][0]
 }
 
-function addLetterToGuess(letter){
+function addLetterToGuess(thisbttn){
+    let letter = thisbttn.innerText
     let currentGuess = false;
     for(let i = 0; i < word.length; i++){
         if(letter == word[i]){
@@ -29,6 +30,9 @@ function addLetterToGuess(letter){
             displayLetter(letter, i)
         } 
     }
+
+    thisbttn.changeID
+
     changeScore(currentGuess);
 
     console.log(userGuessList)

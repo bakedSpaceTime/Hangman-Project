@@ -19,20 +19,19 @@ function createLetterButton(dec){
     this.node.style.margin = '5px'
     this.node.style.width = '30px'
     this.node.className = 'buttons'
-    this. node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
-    this.node.addEventListener('click', this.changeID)
-
+    
     this.node.appendChild(document.createTextNode(decToAlpha(dec)))
-
+    
     this.addToBody = function(){
-
         document.getElementById('buttonDiv').appendChild(this.node)
     }
-
+    
     this.changeID = function() {
-        this.node.id = 'clicked_button'
+        this.id = 'clicked_button'       
     }
-
+    
+    this.node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
+    this.node.addEventListener('click', this.changeID)
     this.addToBody();
 
     // node.onclick = function clicked_button() {
