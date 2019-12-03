@@ -1,3 +1,4 @@
+    //creates an array of all the alphabet buttons on screen
 function alphabetButtons(n) {
 
     let btnArr = [];
@@ -32,7 +33,7 @@ function createLetterButton(dec) {
     this.node.addEventListener('click', this.changeID);
     this.addToBody();
 }
-
+    //converts  a decimal to string
 function decToAlpha(code) {
     return String.fromCharCode(code + 65);
 }

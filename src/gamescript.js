@@ -93,7 +93,7 @@ function continueGame() {
     setTimeout(playGame, 50);
 }
     //game will end and will ask for users name while showing
-    //thier score and stating that they lost
+    //their score and stating that they lost
 function gameOver() {
     document.getElementById('buttonDiv').style.display = 'None';
     document.getElementById('score').style.display = 'None';

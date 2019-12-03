@@ -1,12 +1,12 @@
 let disp = document.getElementById('correctLetters');
-
+    //shows score, lives, and draws blank spaces where the letters will go
 function initializeDisplay() {
-    document.getElementById('score').innerHTML = 'Score: ' + score;     // Initalizes lives 
-    document.getElementById('lives').innerHTML = 'Lives: ' + lives;     // and score
+    document.getElementById('score').innerHTML = 'Score: ' + score;
+    document.getElementById('lives').innerHTML = 'Lives: ' + lives;
 
     displayBlankLines();
 }
-    //responsiblw for the width of the random word
+    //responsible for the width of the random word
 function calculateStartWidth() {
     return width * (0.5 - word.length / 2 * 0.035);
 }
@@ -19,7 +19,7 @@ function displayBlankLines() {
 
     disp.innerText = out;
 }
-
+    //generates letter on screen
 function displayLetter(letter, i) {
     let txt = disp.innerText;
 
@@ -41,7 +41,7 @@ function displayLetter(letter, i) {
 
     disp.innerText = out1;
 }
-
+    //clears buttons on screen
 function clearDisplay() {
     disp.innerHTML = '&nbsp;';
 }
