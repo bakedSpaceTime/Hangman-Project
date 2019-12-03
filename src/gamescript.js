@@ -40,7 +40,7 @@ function addLetterToGuess(letter){
         setTimeout(resetGame, 2000)
     }
 }
-    
+    //checks the for correct answer
 function checkGuess(){
     return userGuessList.join('') == word;
 }

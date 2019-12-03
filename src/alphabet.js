@@ -8,7 +8,7 @@ function alphabetButtons(n){
         i ++
     }    
 }
-    //clickable button to enter
+    // create clickable button to enter
 function createLetterButton(dec){
     
     let node = document.createElement('button');
@@ -35,7 +35,7 @@ function buttClick(name){
     console.log('Button ' + name + ' was clicked');
 
 }
-
+    //clears button that has been used
 function clearButtons(){
     let butdiv = document.getElementById('buttonDiv');
 

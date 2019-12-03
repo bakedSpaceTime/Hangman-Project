@@ -33,7 +33,7 @@ function drawBottomLine(){
     ctx.lineTo(width * 0.1, height * 0.7)
     ctx.stroke()
 }
-
+    //responsible for width 
 function calculateStartWidth(){
     return width * (0.5 - word.length / 2 * 0.035)
 }
