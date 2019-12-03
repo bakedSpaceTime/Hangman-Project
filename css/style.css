@@ -25,7 +25,7 @@ body {
     cursor: pointer;
 }
 
- .buttons:hover {
+.buttons:hover {
     opacity: 1;
     padding: 13px 40px;
 }
@@ -61,4 +61,8 @@ body {
 
 #reset_button {
     visibility: visible;
+}
+
+#correctLetters {
+    font-size: 10vw;
 }

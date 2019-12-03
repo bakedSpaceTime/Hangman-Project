@@ -1,82 +1,108 @@
+let words = [['INTEND', 'have in mind as a purpose'],
+['BITCOIN', 'an online payment system that does not require an intermediary'],
+['CONSTANT', 'a quantity that does not vary'],
+['APPEAL', 'be attractive to'],
+['TATTOO', 'a form of body modification where a design is made by inserting ink'],
+['LEAGUE', 'an association of sports teams that organize matches'],
+['FINANCIAL', 'involving fiscal matters'],
+['ELECTRICITY', 'the set of physical phenomena associated with the presence and motion of electric charge.'],
+['TERRITORY', 'the geographical area under the jurisdiction of a state'],
+['RESOURCE', 'a new or reserve supply that can be drawn upon when needed'],
+['ATTRIBUTE', 'a quality belonging to or characteristics of an entity'],
+['COMMITTEE', 'a group of people appointed for a specific function']];
+
+let word = '';
+let score = 0
+let lives = 7
+
 let userGuess = '';
 let userGuessList = [];
 
-function playGame(){
-    // alphabetButtons(26);
+function playGame() {
 
-    word = randomWord()
-    
-    displayHint(word)
+    word = randomWord();
 
-    console.log(word)
+    displayHint(word);
 
-    console.log(word.includes('i'))
-
-    // drawBottomLine()
-    // displayBlankLines()
-    initializeDisplay()
+    initializeDisplay();
 }
-    //random word from the list that will be chosen for the user to guess
+
 function randomWord() {
-    return words[Math.floor(Math.random()*words.length)][0]
+    return words[Math.floor(Math.random() * words.length)][0];
 }
-    //adds new letter to the guess 
-function addLetterToGuess(letter){
-    let currentGuess;
-    for(let i = 0; i < word.length; i++){
-        if(letter == word[i]){
-            currentGuess = true
-            userGuessList[i] = letter;
-            displayLetter(letter, i)
-        } 
-    }
-    changeScore(currentGuess);
 
-    console.log(userGuessList)
-    
-    if(checkGuess()){
-        console.log('YOU WON')
+function addLetterToGuess(thisbttn) {
+    let letter = thisbttn.innerText;
+    let currentGuess = false;
+    let update_score = true;
+    for (let i = 0; i < word.length; i++) {
+        if (letter == word[i]) {
+            currentGuess = true;
+            userGuessList[i] = letter;
+            displayLetter(letter, i);
+            changeScore(currentGuess);
+            update_score = false;
+        }
+    }
+
+    thisbttn.changeID;
+
+    if (update_score) {
+        changeScore(currentGuess);
+    }
+
+    if (checkGuess()) {
         document.getElementById('hint').innerHTML = 'Nice job!';
-        setTimeout(resetGame, 2000)
+        setTimeout(continueGame, 2000);
     }
 }
-    //checks the for correct answer
-function checkGuess(){
+
+function checkGuess() {
     return userGuessList.join('') == word;
 }
-    //this resets the game for the player to play again
-function resetGame(){
-    score = 0
-    lives = 7
+
+function resetGame() {
+    score = 0;
+    lives = 7;
     userGuess = '';
     userGuessList = [];
-    console.log('reset')
 
-    //document.getElementById('clicked_button').style.visibility = 'visible'
     clearButtons()
     alphabetButtons(26)
     document.getElementById('buttonDiv').style.display = '';
     document.getElementById('score').style.display = '';
     document.getElementById('lives').style.display = '';
 
-    clearDisplay()
-    setTimeout(playGame, 50)
-    
+    clearDisplay();
+    setTimeout(playGame, 50);
 }
 
-    //game ends and a new game will begin with reset scores and lives
+function continueGame() {
+    userGuess = '';
+    userGuessList = [];
+
+    clearButtons();
+    alphabetButtons(26);
+    document.getElementById('buttonDiv').style.display = '';
+    document.getElementById('score').style.display = '';
+    document.getElementById('lives').style.display = '';
+
+    clearDisplay();
+    setTimeout(playGame, 50);
+}
+
 function gameOver() {
-    score = 0
-    lives = 7
-    
     document.getElementById('buttonDiv').style.display = 'None';
     document.getElementById('score').style.display = 'None';
     document.getElementById('lives').style.display = 'None';
-    
-    //document.getElementById('reset').style.display = 'None';
-    //canv.clearRect(0, 0, canvas.width, canvas.height);
 
-    let name = prompt('Please enter your name.');
+    let name = prompt('Please enter your name.', 'Random Player');
 
-    document.getElementById('hint').innerHTML= "Game over, " + name + "! You lost!";
+    document.getElementById('hint').innerHTML = "Game over, " + name + "! You lost!<br>Your final score is: " + score;
+
+    score = 0;
+    lives = 7;
 }
+
+let buttonArray = alphabetButtons(26);
+playGame();

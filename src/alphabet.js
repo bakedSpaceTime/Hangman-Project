@@ -1,46 +1,47 @@
+function alphabetButtons(n) {
 
+    let btnArr = [];
 
-function alphabetButtons(n){
+    let i = 0;
+    while (i < n) {
+        btnArr.push(new createLetterButton(i));
+        i++;
+    }
 
-    let i = 0
-    while(i < n){
-        createLetterButton(i);
-        i ++
-    }    
-}
-    // create clickable button to enter
-function createLetterButton(dec){
-    
-    let node = document.createElement('button');
-
-    node.style.margin = '5px'
-    node.style.width = '30px'
-    node.className = 'buttons'
-    node.addEventListener('click', function(){addLetterToGuess(this.innerText)})
-    node.addEventListener('click', function(){node.id = 'clicked_button'})
-
-    node.appendChild(document.createTextNode(decToAlpha(dec)))
-
-    document.getElementById('buttonDiv').appendChild(node)
-    // node.onclick = function clicked_button() {
-    //     node.id = 'clicked_button'
-    // }
+    return btnArr;
 }
 
-function decToAlpha(code){
+function createLetterButton(dec) {
+    this.node = document.createElement('button');
+
+    this.node.style.margin = '5px';
+    this.node.style.width = '30px';
+    this.node.className = 'buttons';
+
+    this.node.appendChild(document.createTextNode(decToAlpha(dec)));
+
+    this.addToBody = function () {
+        document.getElementById('buttonDiv').appendChild(this.node);
+    }
+
+    this.changeID = function () {
+        this.id = 'clicked_button';
+    }
+
+    this.node.addEventListener('click', function () { addLetterToGuess(this) });
+    this.node.addEventListener('click', this.changeID);
+    this.addToBody();
+}
+
+function decToAlpha(code) {
     return String.fromCharCode(code + 65);
 }
-    //clicked the button to use it
-function buttClick(name){
-    console.log('Button ' + name + ' was clicked');
 
-}
-    //clears button that has been used
-function clearButtons(){
+function clearButtons() {
     let butdiv = document.getElementById('buttonDiv');
 
-    while(butdiv.firstChild){
-        butdiv.removeChild(butdiv.firstChild)
+    while (butdiv.firstChild) {
+        butdiv.removeChild(butdiv.firstChild);
     }
 
     buttonList = [];
