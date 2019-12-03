@@ -10,7 +10,7 @@ function alphabetButtons(n) {
 
     return btnArr;
 }
-
+    //creates the letters as buttons for the user to use
 function createLetterButton(dec) {
     this.node = document.createElement('button');
 
@@ -36,7 +36,7 @@ function createLetterButton(dec) {
 function decToAlpha(code) {
     return String.fromCharCode(code + 65);
 }
-
+    //clears the button that has been used
 function clearButtons() {
     let butdiv = document.getElementById('buttonDiv');
 

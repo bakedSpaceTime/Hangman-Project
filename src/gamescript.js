@@ -17,7 +17,8 @@ let lives = 7
 
 let userGuess = '';
 let userGuessList = [];
-
+    // generates random word to guess
+    // generates the words hint
 function playGame() {
 
     word = randomWord();
@@ -26,11 +27,11 @@ function playGame() {
 
     initializeDisplay();
 }
-
+    //random word will be chosen for the user to guess
 function randomWord() {
     return words[Math.floor(Math.random() * words.length)][0];
 }
-
+    //this will add the chosen letter to the blank line
 function addLetterToGuess(thisbttn) {
     let letter = thisbttn.innerText;
     let currentGuess = false;
@@ -56,11 +57,12 @@ function addLetterToGuess(thisbttn) {
         setTimeout(continueGame, 2000);
     }
 }
-
+    //checks to see if the guess is right or not
 function checkGuess() {
     return userGuessList.join('') == word;
 }
-
+    //game resets to its score=0 and the lives back upto 7
+    // the buttons get cleared and game will reset
 function resetGame() {
     score = 0;
     lives = 7;
@@ -90,7 +92,8 @@ function continueGame() {
     clearDisplay();
     setTimeout(playGame, 50);
 }
-
+    //game will end and will ask for users name while showing
+    //thier score and stating that they lost
 function gameOver() {
     document.getElementById('buttonDiv').style.display = 'None';
     document.getElementById('score').style.display = 'None';

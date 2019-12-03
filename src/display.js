@@ -6,11 +6,11 @@ function initializeDisplay() {
 
     displayBlankLines();
 }
-
+    //responsiblw for the width of the random word
 function calculateStartWidth() {
     return width * (0.5 - word.length / 2 * 0.035);
 }
-
+    //displays blank stops inplace of the actual word to be guessed
 function displayBlankLines() {
     let out = ''
     for (let i = 0; i < word.length; i++) {
@@ -46,7 +46,8 @@ function clearDisplay() {
     disp.innerHTML = '&nbsp;';
 }
 
-
+    //will showcase a hint related to the word to help the user
+    //guess the word
 function displayHint(word) {
     let hint;
     for (let i = 0; i < words.length; i++) {
@@ -57,7 +58,9 @@ function displayHint(word) {
     document.getElementById('hint').innerHTML = 'Hint: ' + hint;
 }
 
-
+    //this will up the score by one when the user has guessed the right
+    //letter or will lower it by one if the user gets the wrong letter
+    //if the score goes down by 1 so will the lives by 1
 function changeScore(guess) {
     let scoreTag = document.getElementById('score');
     let livesTag = document.getElementById('lives');
